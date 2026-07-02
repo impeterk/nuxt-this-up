@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@plugin "daisyui" {
+  themes:
+    lofi --default,
+    black --prefersdark;
+}
+
+@theme {
+  --font-sans: "Geist Mono Variable", sans-serif;
+}
+
