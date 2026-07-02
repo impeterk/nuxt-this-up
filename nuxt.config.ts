@@ -1,8 +1,11 @@
+import tailwindcss from '@tailwindcss/vite'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-
+  vite: {
+    plugins: [tailwindcss()],
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -11,8 +14,14 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@comark/nuxt',
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/seo',
-    'nuxt-auth-utils'
-  ]
+    'nuxt-auth-utils',
+    '@nuxthub/core',
+  ],
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+  css: ['~/assets/css/main.css'],
 })
