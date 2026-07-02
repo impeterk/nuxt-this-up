@@ -11,3 +11,6 @@
   --font-sans: "Geist Mono Variable", sans-serif;
 }
 
+@utility container {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
