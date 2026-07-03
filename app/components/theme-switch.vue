@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const active_theme = useCookie("__theme");
+const active_theme = useCookie('__theme', { path: '/', maxAge: 60 * 60 * 24 * 365 })
 
 const themes = [
-  { name: "system", icon: "carbon:screen" },
-  { name: "black", icon: "carbon:moon" },
-  { name: "lofi", icon: "carbon:sun" },
-];
+  { name: 'system', icon: 'carbon:screen' },
+  { name: 'black', icon: 'carbon:moon' },
+  { name: 'lofi', icon: 'carbon:sun' },
+]
 
 useHead({
   htmlAttrs: {
-    "data-theme": computed(() => active_theme.value),
+    'data-theme': computed(() => active_theme.value || 'system'),
   },
-});
+})
 </script>
 
 <template>
@@ -19,8 +19,7 @@ useHead({
     <button
       v-for="theme in themes"
       :key="theme.name"
-      :class="[
-        'btn btn-square btn-sm join-item text-base ',
+      class="btn btn-square btn-sm join-item text-base " :class="[
         { 'btn-primary': theme.name === active_theme },
       ]"
       @click="active_theme = theme.name"
