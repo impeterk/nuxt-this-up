@@ -11,6 +11,9 @@ Components use the  syntax. They can have attributes and children:
 
 
 ## Lists
+::card
+The default content was overriden
+::
 
 Comark handles lists, of course:
 
