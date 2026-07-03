@@ -2,7 +2,7 @@
 
 <template>
   <div class="drawer lg:drawer-open">
-    <input id="drawer" type="checkbox" class="drawer-toggle" />
+    <input id="drawer" type="checkbox" class="drawer-toggle">
 
     <div class="drawer-content">
       <header class="navbar bg-base-200 w-full sticky top-0">
@@ -18,7 +18,7 @@
             />
           </label>
         </div>
-        <div class="navbar-center"></div>
+        <div class="navbar-center" />
         <div class="navbar-end">
           <div class="hidden lg:inline">
             <ThemeSwitch />
@@ -31,7 +31,7 @@
     </div>
     <div class="drawer-side bg-base-200 w-80">
       <button
-        class="btn btn-ghost hover:bg-base-200 hover:border-base-200 hover:shadow-none btn-block text-xl py-8"
+        class="btn btn-ghost hover:bg-base-200 hover:border-base-200 hover:shadow-none btn-block py-8"
       >
         peterk.dev
       </button>
@@ -39,7 +39,7 @@
         for="drawer"
         aria-label="close sidebar"
         class="drawer-overlay"
-      ></label>
+      />
       <ul class="menu w-full p-4">
         <!-- Sidebar content here -->
         <li><a>Sidebar Item 1</a></li>
