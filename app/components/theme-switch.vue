@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const active_theme = useCookie('__theme', { path: '/', maxAge: 60 * 60 * 24 * 365 })
+const active_theme = useCookie('__theme', { path: '/', maxAge: 60 * 60 * 24 * 365, default: () => 'system' })
 
 const themes = [
   { name: 'system', icon: 'carbon:screen' },
@@ -9,7 +9,7 @@ const themes = [
 
 useHead({
   htmlAttrs: {
-    'data-theme': computed(() => active_theme.value || 'system'),
+    'data-theme': computed(() => active_theme.value),
   },
 })
 </script>
