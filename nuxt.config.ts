@@ -39,8 +39,8 @@ export default defineNuxtConfig({
       default: {
         connector: 'libsql',
         options: {
-          url: 'libsql://db0-impeterk.aws-eu-west-1.turso.io',
-          authToken: process.env.AUTH_TOKEN,
+          url: process.env.DB_URL,
+          authToken: process.env.DB_AUTH_TOKEN,
         },
       },
     },
