@@ -1,3 +1,5 @@
+import { parse } from 'comark'
+
 export default defineEventHandler(async (event) => {
   const db = useDatabase()
   const slug = getRouterParam(event, 'slug')
@@ -11,11 +13,12 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  const tree = await parse(post.content as string)
   return {
     slug,
     title: post.title as string,
     description: post.description as string,
     pubDate: post.created_at as number,
-    content: post.content,
+    tree,
   }
 })

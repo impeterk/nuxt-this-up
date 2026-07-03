@@ -14,9 +14,7 @@ const components = { card: Card }
 <template>
   <div>Page: index</div>
   <article class="prose">
-    <Comark :components>
-      {{ post.content }}
-    </Comark>
+    <ComarkRenderer :tree="post.tree" :components />
   </article>
 </template>
 
